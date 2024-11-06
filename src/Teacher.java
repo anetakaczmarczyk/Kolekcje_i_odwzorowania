@@ -28,6 +28,9 @@ public class Teacher implements Comparable<Teacher> {
 
     @Override
     public int compareTo(Teacher o) {
+        System.out.println(surname.compareTo(o.surname));
         return 0;
+
+        }
     }
-}
+

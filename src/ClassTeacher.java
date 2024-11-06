@@ -15,12 +15,18 @@ public class ClassTeacher {
         for (Teacher t : teachers){
             if (t.name.equals(teacher.name) && t.surname.equals(teacher.surname)) {
                 found = true;
+                System.out.println("W tej grupie już istnieje taki nauczyciel");
                 break;
             }
         }
-        if (!found && teachers.size() < maxNumberOfTeachers){
+        if (teachers.size() >= maxNumberOfTeachers){
+            System.out.println("Brak miejsca w grupie");
+        }
+        else if (!found && teachers.size() < maxNumberOfTeachers){
             teachers.add(teacher);
-        } // Dodanie komunikatów przy found i przy size
-        System.out.println(teachers.toString());
+        }
+        for (int i = 0; i < teachers.size(); i++ ){
+            System.out.println(teachers.get(i).name);
+        }
     }
 }

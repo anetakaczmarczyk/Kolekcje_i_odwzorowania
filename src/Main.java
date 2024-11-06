@@ -7,5 +7,6 @@ public class Main {
         c.addTeacher(t);
         c.addTeacher(t2);
         return;
+//        Wywołania wszystkich metod które są do zaimplementowanina
     }
 }

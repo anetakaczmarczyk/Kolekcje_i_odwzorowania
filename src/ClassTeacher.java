@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -15,18 +14,15 @@ public class ClassTeacher {
 
     public void addTeacher(Teacher teacher) {
         if (isTeacherInClass(teacher)) {
-            System.out.println("W tej grupie już istnieje taki nauczyciel");
+            System.out.println("\nW tej grupie już istnieje taki nauczyciel");
         }else{
 
-        if (teachers.size() >= maxNumberOfTeachers){
-            System.out.println("Brak miejsca w grupie");
-        }
-        else if (teachers.size() < maxNumberOfTeachers){
-            teachers.add(teacher);
-        }
-        }
-        for (int i = 0; i < teachers.size(); i++ ){
-            System.out.println(teachers.get(i).name);
+            if (teachers.size() >= maxNumberOfTeachers){
+                System.out.println("\nBrak miejsca w grupie");
+            }
+            else {
+                teachers.add(teacher);
+            }
         }
     }
 
@@ -49,23 +45,19 @@ public class ClassTeacher {
 
     public void addSalary(Teacher t, int salary){
         if (isTeacherInClass(t)){
-            System.out.println("Wyplata przed zmiana: " + t.salary);
+            System.out.println("\nWyplata przed zmiana: " + t.salary);
             t.salary += salary;
             System.out.println("Wyplata po zmianie: " +  t.salary);
         }
         else{
-            System.out.println("Nauczyciel nie znajduje sie w grupie");
+            System.out.println("\nNauczyciel nie znajduje sie w grupie");
         }
     }
     public void removeTeacher(Teacher t){
         int id = returnTeacherId(t);
         if (id != -1){
             teachers.remove(id);
-            System.out.println("Pomyslnie usunieto");
-            System.out.println("Po usunieciu");
-            for (Teacher teacher : teachers) {
-                System.out.println(teacher.name);
-            }
+            System.out.println("\nPomyslnie usunieto");
         }
         else{
             System.out.println("Nauczyciel nie znajduje sie w grupie");
@@ -75,10 +67,10 @@ public class ClassTeacher {
   public void changeCondition(Teacher t, TeacherCondition condition) {
       if (isTeacherInClass(t)){
           t.condition = condition;
-          System.out.println("Stan po zmianie: " +  t.condition);
+          System.out.println("\nStan po zmianie: " +  t.condition);
       }
       else{
-          System.out.println("Nauczyciel nie znajduje sie w grupie");
+          System.out.println("\nNauczyciel nie znajduje sie w grupie");
       }
   }
   public void search(String surname){
